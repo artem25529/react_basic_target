@@ -1,0 +1,86 @@
+.billy-monument {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+
+  .content {
+    width: min(96%, 1000px);
+    height: 100vh;
+    position: relative;
+
+    .slide {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+
+      &.text {
+        width: 100%;
+        font-size: 4.3em;
+        font-weight: 560;
+        text-align: center;
+      }
+
+      &.img {
+        width: 75%;
+      }
+    }
+
+    .video-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2em;
+      position: relative;
+      z-index: 2;
+
+      video {
+        width: 84%;
+        aspect-ratio: 3/2.58;
+        object-fit: cover;
+      }
+
+      button {
+        font-weight: 550;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.4em;
+        padding: 0.4em 0.6em;
+        box-shadow: 0 2px 5px black;
+        border-radius: 0.4em;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

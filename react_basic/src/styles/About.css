@@ -1,0 +1,157 @@
+.about-page {
+  margin-inline: 3em;
+  padding-inline: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  flex-grow: 1;
+  border-inline: 1px solid var(--color-nav-text);
+  position: relative;
+
+  @media (max-width: 1250px) {
+    position: static;
+    border-inline: none;
+    padding-inline: 0;
+  }
+
+  @media (max-width: 680px) {
+    margin-inline: 1em;
+  }
+
+  & > .about-wrapper {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+
+    & > .title {
+      font-size: 1.5em;
+      font-weight: 500;
+      align-self: center;
+    }
+
+    & > .text {
+      text-align: justify;
+      text-indent: 2em;
+      line-height: 1.7;
+    }
+  }
+
+  & > .about-top-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+
+    & > .title {
+      color: var(--color-nav-text);
+      align-self: center;
+      font-size: 1.3em;
+      font-weight: 500;
+    }
+
+    & > .content {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      & > .btn {
+        display: none;
+      }
+
+      @media (max-width: 560px) {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 1.25em;
+
+        & > :is(:first-child, :last-child) {
+          order: 1;
+        }
+
+        & > :nth-child(2) {
+          order: 0;
+          width: 100%;
+        }
+
+        & > :first-child {
+          margin-left: 1em;
+        }
+
+        & > :last-child {
+          margin-right: 1em;
+        }
+      }
+
+      & > .post-list {
+        flex-grow: 1;
+        align-items: center;
+        overflow: hidden;
+        flex-direction: row;
+        gap: 0;
+
+        & > li {
+          flex-shrink: 0;
+          width: 100%;
+          animation: 0.5s both;
+
+          &.move-right {
+            animation-name: moveRight;
+          }
+
+          &.move-left {
+            animation-name: moveLeft;
+          }
+
+          & > .post {
+            margin: 0;
+
+            & > .post-controls {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &.slider {
+        & > .btn {
+          cursor: pointer;
+          display: block;
+          border-radius: 50%;
+
+          padding: 0.3em;
+          border: 1px solid var(--color-border);
+          border-radius: 50%;
+
+          &.prev {
+            border-top-right-radius: 0.3em;
+            border-bottom-right-radius: 0.3em;
+          }
+
+          &.next {
+            border-top-left-radius: 0.3em;
+            border-bottom-left-radius: 0.3em;
+          }
+
+          &:hover {
+            box-shadow: 0 1px 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes moveLeft {
+  to {
+    transform: translate(-100%);
+  }
+}
+
+@keyframes moveRight {
+  from {
+    transform: translate(-100%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}

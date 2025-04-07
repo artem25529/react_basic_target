@@ -1,0 +1,118 @@
+.login-page {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .err {
+    margin-top: 0.2em;
+    font-size: 0.9em;
+  }
+
+  .login-wrapper {
+    overflow: hidden;
+    background-color: var(--header-background);
+    width: min(90%, 500px);
+    position: relative;
+    margin-top: -10em;
+    border: 1px solid var(--color-nav-text);
+    border-radius: 0.6em;
+    padding: 1em 1.2em;
+    box-shadow: 0 2px 5px;
+
+    @media (max-width: 1250px) {
+      margin-top: 1.2em;
+    }
+
+    & > .login-title {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-bottom: 0.5em;
+      text-align: center;
+      color: var(--color-nav-text);
+    }
+
+    & > .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8em;
+
+      & > .login-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        & > .login-field {
+          display: flex;
+          flex-direction: column;
+
+          input {
+            border-radius: 0.3em;
+            width: 100%;
+
+            &[type='password'] {
+              padding-right: 1.8em;
+            }
+          }
+
+          & > .password-wrapper {
+            position: relative;
+
+            & > .password-visibility {
+              position: absolute;
+              right: 0.4em;
+              top: 0.3em;
+
+              & > button {
+                display: block;
+                cursor: pointer;
+                border-radius: 30%;
+
+                & > .material-symbols-outlined {
+                  display: block;
+                  font-size: 1.25em;
+                  font-variation-settings: 'FILL' 0, 'wght' 300;
+
+                  &:hover {
+                    text-shadow: 0 0 3px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & > .login-legend {
+        font-style: italic;
+        font-size: 0.95em;
+
+        a {
+          text-decoration: underline;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      & > .login-submit {
+        button {
+          font-size: 1.1em;
+          cursor: pointer;
+          color: var(--color-login-text);
+          font-weight: 500;
+          border: 1px solid;
+          padding: 0.1em 0.4em;
+          border-radius: 0.3em;
+
+          &:hover {
+            background-color: var(--color-login-background-hover);
+          }
+        }
+      }
+    }
+  }
+}

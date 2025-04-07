@@ -1,0 +1,18 @@
+.spinner-2 {
+  display: flex;
+  gap: 0.5em;
+
+  & > .spinner-dot {
+    width: 0.3em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--color-main);
+    animation: grow 0.6s infinite;
+  }
+}
+
+@keyframes grow {
+  to {
+    scale: 180%;
+  }
+}

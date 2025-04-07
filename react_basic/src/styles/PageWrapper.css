@@ -1,0 +1,131 @@
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  min-width: 370px;
+
+  & > .page-content-wrapper {
+    width: min(100%, 1500px);
+    align-self: center;
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    z-index: 1;
+
+    & > .page-main {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 60%;
+      order: 1;
+    }
+
+    & > .page-aside {
+      width: 20%;
+      order: 2;
+    }
+
+    & > .page-footer {
+      width: 20%;
+      order: 0;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .page-wrapper {
+    & > .page-content-wrapper {
+      padding-top: 1.5em;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      padding-inline: 13em;
+      align-content: start;
+
+      & > .page-main {
+        order: 2;
+        flex-grow: 1;
+        margin-top: 1.2em;
+        height: auto;
+        position: static;
+        border-top: 1px solid var(--color-nav-text);
+      }
+
+      & > .page-aside {
+        padding: 0;
+        order: 1;
+        width: 42%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & > .page-advert {
+          width: 14rem;
+          position: static;
+        }
+      }
+
+      & > .page-footer {
+        order: 0;
+        width: 42%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: static;
+
+        & > .footer-wrapper {
+          position: static;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .page-wrapper {
+    & > .page-content-wrapper {
+      padding-inline: 8em;
+      & > .page-main {
+      }
+
+      & > .page-aside {
+        width: 100%;
+        & > .page-advert {
+          width: 30%;
+        }
+      }
+
+      & > .page-footer {
+        width: 100%;
+        margin-bottom: 1.2em;
+        & > .footer-wrapper {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .page-wrapper {
+    & > .page-content-wrapper {
+      padding-inline: 5em;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .page-wrapper {
+    & > .page-content-wrapper {
+      padding-inline: 2em;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .page-wrapper {
+    & > .page-content-wrapper {
+      padding-inline: 0;
+    }
+  }
+}

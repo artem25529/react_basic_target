@@ -1,0 +1,140 @@
+.post {
+  background-color: var(--post-background);
+  padding: 1.5em;
+  position: relative;
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+
+  button {
+    display: block;
+    cursor: pointer;
+  }
+
+  & > .post-content {
+    display: flex;
+    gap: 0.4em;
+
+    & > .post-content-wrapper {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6em;
+
+      & > .post-title-wrapper {
+        font-weight: bold;
+        font-size: 1.7em;
+
+        & > .post-title {
+          width: 100%;
+          min-height: 1lh;
+          word-wrap: break-word;
+        }
+      }
+
+      & > .post-text {
+        width: 100%;
+        line-height: 1.6;
+        min-height: 2lh;
+        word-wrap: break-word;
+      }
+    }
+
+    & > .post-favorite {
+      .fav-icon {
+        font-size: 2.15em;
+        font-variation-settings: 'FILL' 0, 'wght' 300;
+
+        &.active {
+          font-variation-settings: 'FILL' 1;
+          color: crimson;
+        }
+      }
+    }
+  }
+
+  & > .post-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.8em;
+    width: 5em;
+    right: calc(-5em - 1px);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+
+    & > .post-control {
+      background-color: var(--post-background);
+      border: 1px solid var(--color-border);
+      border-left: none;
+      padding: 0.45em 0.75em;
+      border-top-right-radius: 0.4em;
+      border-bottom-right-radius: 0.4em;
+
+      .control-icon {
+        display: block;
+      }
+
+      &.edit {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9em;
+      }
+    }
+  }
+
+  & > .post-statistics {
+    display: flex;
+    gap: 2.2em;
+    font-size: 1.12em;
+    padding-inline: 0.5em;
+
+    & > .post-statistic {
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+
+      &:first-child {
+        margin-right: auto;
+      }
+
+      & > .statistic-value {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.post-delete-notification {
+  & > .delete-message {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+  }
+
+  & > .delete-controls {
+    display: flex;
+    gap: 0.4em;
+
+    & > button {
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--color-border);
+      padding: 0.3em 0.4em;
+      border-radius: 0.4em;
+
+      &:hover {
+        box-shadow: 0 0 2px;
+      }
+
+      &.delete {
+        background-color: rgb(255, 135, 159);
+      }
+
+      &.cancel {
+        background-color: rgb(202, 202, 202);
+      }
+    }
+  }
+}

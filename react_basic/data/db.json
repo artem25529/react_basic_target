@@ -1,0 +1,235 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "1st post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibu!!s suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!!",
+      "statistics": {
+        "likes": 11,
+        "dislikes": 2,
+        "views": 124
+      }
+    },
+    {
+      "id": "2",
+      "title": "2nd post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit?",
+      "statistics": {
+        "likes": 22,
+        "dislikes": 14,
+        "views": 231
+      }
+    },
+    {
+      "id": "3",
+      "title": "3rd post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "statistics": {
+        "likes": 66,
+        "dislikes": 18,
+        "views": 238
+      }
+    },
+    {
+      "id": "4",
+      "title": "4th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "likes": 6,
+        "dislikes": 0,
+        "views": 128
+      }
+    },
+    {
+      "id": "5",
+      "title": "5th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!!",
+      "statistics": {
+        "views": 15,
+        "likes": 0,
+        "dislikes": 1
+      }
+    },
+    {
+      "id": "6",
+      "title": "6th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 175,
+        "likes": 11,
+        "dislikes": 12
+      }
+    },
+    {
+      "id": "7",
+      "title": "7th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 195,
+        "likes": 10,
+        "dislikes": 22
+      }
+    },
+    {
+      "id": "8",
+      "title": "8th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit.",
+      "statistics": {
+        "views": 85,
+        "likes": 10,
+        "dislikes": 0
+      }
+    },
+    {
+      "id": "9",
+      "title": "9th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.!",
+      "statistics": {
+        "views": 15,
+        "likes": 0,
+        "dislikes": 2
+      }
+    },
+    {
+      "id": "10",
+      "title": "10th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 99,
+        "likes": 65,
+        "dislikes": 0
+      }
+    },
+    {
+      "id": "11",
+      "title": "11th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 222,
+        "likes": 25,
+        "dislikes": 1
+      }
+    },
+    {
+      "id": "12",
+      "title": "12th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit?",
+      "statistics": {
+        "views": 120,
+        "likes": 11,
+        "dislikes": 13
+      }
+    },
+    {
+      "id": "13",
+      "title": "13th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "statistics": {
+        "views": 188,
+        "likes": 75,
+        "dislikes": 10
+      }
+    },
+    {
+      "id": "14",
+      "title": "14th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 56,
+        "likes": 12,
+        "dislikes": 0
+      }
+    },
+    {
+      "id": "15",
+      "title": "15th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 201,
+        "likes": 67,
+        "dislikes": 3
+      }
+    },
+    {
+      "id": "16",
+      "title": "16th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 85,
+        "likes": 46,
+        "dislikes": 10
+      }
+    },
+    {
+      "id": "17",
+      "title": "17th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 176,
+        "likes": 95,
+        "dislikes": 8
+      }
+    },
+    {
+      "id": "18",
+      "title": "18th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit.",
+      "statistics": {
+        "views": 78,
+        "likes": 42,
+        "dislikes": 26
+      }
+    },
+    {
+      "id": "19",
+      "title": "19th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "statistics": {
+        "views": 61,
+        "likes": 14,
+        "dislikes": 1
+      }
+    },
+    {
+      "id": "20",
+      "title": "20th post title!",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibus suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!",
+      "statistics": {
+        "views": 202,
+        "likes": 102,
+        "dislikes": 31
+      }
+    },
+    {
+      "id": "a147",
+      "title": "new title",
+      "text": "new text",
+      "statistics": {
+        "views": 1000,
+        "likes": 123,
+        "dislikes": 76
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "test1@gmail.com",
+      "password": "Test_23",
+      "favorites": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "2",
+      "email": "test2@gmail.com",
+      "password": "Test_12",
+      "favorites": [
+        "7"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+.no-page {
+  font-size: 1.6em;
+  margin-top: 3em;
+  line-height: 1.8;
+
+  & > .msg {
+    text-align: center;
+    & > strong {
+      font-weight: 600;
+    }
+
+    & > a {
+      text-decoration: underline;
+      font-style: italic;
+    }
+  }
+}

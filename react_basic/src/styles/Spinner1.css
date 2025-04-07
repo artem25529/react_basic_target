@@ -1,0 +1,14 @@
+.spinner-1 {
+  width: 1.4em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.2em solid lightgray;
+  border-top-color: var(--color-main);
+  animation: rotate 0.4s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    rotate: 360deg;
+  }
+}

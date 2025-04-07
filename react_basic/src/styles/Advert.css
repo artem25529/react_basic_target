@@ -1,0 +1,16 @@
+.page-aside {
+  padding-inline: 2em;
+  & > .page-advert {
+    position: sticky;
+    top: 10rem;
+
+    & > a {
+      display: block;
+
+      & > img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}

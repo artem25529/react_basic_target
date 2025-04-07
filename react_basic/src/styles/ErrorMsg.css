@@ -1,0 +1,21 @@
+.error-msg {
+  font-size: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  align-items: center;
+  margin-top: 2em;
+
+  .err-icon {
+    font-size: 2em;
+    color: crimson;
+  }
+
+  .content {
+    font-weight: 550;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
