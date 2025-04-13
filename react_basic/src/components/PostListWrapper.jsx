@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useContext } from 'react';
-import { PageWrapperContext } from '../pages/PageWrapper.jsx';
+import { NotificationContext } from '../pages/PageWrapper.jsx';
 import PostList from './PostList.jsx';
 import Loader from '../components/Loader.jsx';
 import postService from '../services/postService.js';
@@ -8,7 +8,7 @@ import windowUtils from '../services/windowUtils.js';
 import '../styles/PostListWrapper.css';
 
 function PostListWrapper({ searchParams }) {
-  const { setErrorMsg } = useContext(PageWrapperContext);
+  const { setErrorMsg } = useContext(NotificationContext);
 
   const [page, setPage] = useState(1);
   const [postList, setPostList] = useState([]);
@@ -56,7 +56,7 @@ function PostListWrapper({ searchParams }) {
 
   useEffect(() => {
     if (prevSearchParams.current !== searchParams) {
-      prevSearchParams.current == searchParams;
+      prevSearchParams.current = searchParams;
       setPage(page === 0 ? 1 : 0);
     }
   }, [searchParams]);

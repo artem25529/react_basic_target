@@ -2,17 +2,17 @@ import { createContext, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
-import PopupMessage from '../components/PopupMessage.jsx';
-import FullscreenPopup from '../components/FullscreenPopup.jsx';
 import Advert from '../components/Advert.jsx';
+import NotificationManager from '../components/NotificationManager.jsx';
+import ErrorBoundary from '../components/ErrorBoundary.jsx';
+import ErrorMsg from '../components/ErrorMsg.jsx';
 import themeService from '../services/themeService.js';
 import localStorageService from '../services/localStorageService.js';
 import urlUtils from '../utils/urlUtils.js';
-import ErrorBoundary from '../components/ErrorBoundary.jsx';
-import ErrorMsg from '../components/ErrorMsg.jsx';
 import '../styles/PageWrapper.css';
 
 const PageWrapperContext = createContext();
+const NotificationContext = createContext();
 
 function PageWrapper() {
   const location = useLocation();
@@ -29,6 +29,7 @@ function PageWrapper() {
   const [errorMsg, setErrorMsg] = useState();
   const [errorMsgMillis, setErrorMsgMillis] = useState();
   const [errorMsgCallback, setErrorMsgCallback] = useState();
+
   const [fullscreenPopupContent, setFullscreenPopupContent] = useState();
 
   useEffect(() => {
@@ -40,18 +41,6 @@ function PageWrapper() {
       }
     });
   }, []);
-
-  function successPopupResetCallback() {
-    setSuccessMsg();
-    setSuccessMsgCallback();
-    setSuccessMsgMillis();
-  }
-
-  function errorPopupResetCallback() {
-    setErrorMsg();
-    setErrorMsgCallback();
-    setErrorMsgMillis();
-  }
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -88,67 +77,56 @@ function PageWrapper() {
     themeService.applyTheme(user, theme);
   }, [theme]);
 
+  const userContextObj = {
+    user,
+    setUser,
+
+    theme,
+    setTheme,
+
+    favorites,
+    setFavorites,
+  };
+
+  const notificationContextObj = {
+    successMsg,
+    setSuccessMsg,
+    successMsgCallback,
+    setSuccessMsgCallback,
+    successMsgMillis,
+    setSuccessMsgMillis,
+
+    errorMsg,
+    setErrorMsg,
+    errorMsgCallback,
+    setErrorMsgCallback,
+    errorMsgMillis,
+    setErrorMsgMillis,
+
+    fullscreenPopupContent,
+    setFullscreenPopupContent,
+  };
+
   return (
-    <PageWrapperContext.Provider
-      value={{
-        user,
-        setUser,
-        theme,
-        setTheme,
-        favorites,
-        setFavorites,
-        setSuccessMsg,
-        setSuccessMsgCallback,
-        setSuccessMsgMillis,
-        setErrorMsg,
-        setErrorMsgCallback,
-        setErrorMsgMillis,
-        setFullscreenPopupContent,
-      }}
-    >
-      {successMsg && (
-        <PopupMessage
-          key={'success-msg-' + new Date().getTime()}
-          level="success"
-          message={successMsg}
-          resetCallback={successPopupResetCallback}
-          milliseconds={successMsgMillis}
-          callback={successMsgCallback}
-        />
-      )}
-
-      {errorMsg && (
-        <PopupMessage
-          key={'error-msg-' + new Date().getTime()}
-          level="error"
-          message={errorMsg}
-          resetCallback={errorPopupResetCallback}
-          milliseconds={errorMsgMillis}
-          callback={errorMsgCallback}
-        />
-      )}
-
-      {fullscreenPopupContent && (
-        <FullscreenPopup setFullscreenPopupContent={setFullscreenPopupContent}>
-          {fullscreenPopupContent}
-        </FullscreenPopup>
-      )}
-
-      <section className="page-wrapper">
-        <Header />
-        <div className="page-content-wrapper">
-          <Advert />
-          <main className="page-main">
-            <ErrorBoundary fallback={<ErrorMsg />}>
-              <Outlet />
-            </ErrorBoundary>
-          </main>
-          <Footer />
-        </div>
-      </section>
+    <PageWrapperContext.Provider value={userContextObj}>
+      <NotificationContext.Provider value={notificationContextObj}>
+        <NotificationManager />
+        <section className="page-wrapper">
+          <Header />
+          <div className="page-content-wrapper">
+            <Advert />
+            <main className="page-main">
+              <ErrorBoundary fallback={<ErrorMsg />}>
+                <Outlet />
+              </ErrorBoundary>
+            </main>
+            <Footer />
+          </div>
+        </section>
+      </NotificationContext.Provider>
     </PageWrapperContext.Provider>
   );
 }
 
 export default PageWrapper;
-export { PageWrapperContext };
+export { PageWrapperContext, NotificationContext };

@@ -1,6 +1,9 @@
 import { useState, useRef, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { PageWrapperContext } from '../pages/PageWrapper.jsx';
+import {
+  PageWrapperContext,
+  NotificationContext,
+} from '../pages/PageWrapper.jsx';
 import Loader from '../components/Loader.jsx';
 import validationService from '../services/validationService.js';
 import userService from '../services/userService.js';
@@ -9,13 +12,14 @@ import '../styles/Login.css';
 function Login({ isLogin }) {
   const navigate = useNavigate();
 
+  const { setUser } = useContext(PageWrapperContext);
+
   const {
-    setUser,
     setErrorMsg,
     setSuccessMsg,
     setSuccessMsgCallback,
     setSuccessMsgMillis,
-  } = useContext(PageWrapperContext);
+  } = useContext(NotificationContext);
 
   const [values, setValues] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
@@ -78,16 +82,6 @@ function Login({ isLogin }) {
     }
   }
 
-  function togglePasswordVisibility() {
-    if (isPasswordShown) {
-      passwordInputRef.current.type = 'password';
-    } else {
-      passwordInputRef.current.type = 'text';
-    }
-
-    setIsPasswordShown(!isPasswordShown);
-  }
-
   return (
     <section className="login-page">
       <div className="login-wrapper">
@@ -134,7 +128,7 @@ function Login({ isLogin }) {
                   ref={passwordInputRef}
                   value={values.password}
                   onChange={handleValueChange}
-                  type="password"
+                  type={isPasswordShown ? 'text' : 'password'}
                   name="password"
                   placeholder="Password"
                   required
@@ -142,29 +136,14 @@ function Login({ isLogin }) {
                   maxLength="30"
                 />
                 <div className="password-visibility">
-                  {!isPasswordShown && (
-                    <button
-                      type="button"
-                      className="show"
-                      onClick={togglePasswordVisibility}
-                    >
-                      <span className="material-symbols-outlined">
-                        visibility
-                      </span>
-                    </button>
-                  )}
-
-                  {isPasswordShown && (
-                    <button
-                      type="button"
-                      className="hide"
-                      onClick={togglePasswordVisibility}
-                    >
-                      <span className="material-symbols-outlined">
-                        visibility_off
-                      </span>
-                    </button>
-                  )}
+                  <button
+                    type="button"
+                    onClick={() => setIsPasswordShown(!isPasswordShown)}
+                  >
+                    <span className="material-symbols-outlined">
+                      {isPasswordShown ? 'visibility' : 'visibility_off'}
+                    </span>
+                  </button>
                 </div>
               </div>
               {errors.password && (

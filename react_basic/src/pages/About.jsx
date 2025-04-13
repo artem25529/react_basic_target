@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext, useRef } from 'react';
-import { PageWrapperContext } from './PageWrapper.jsx';
+import { PageWrapperContext, NotificationContext } from './PageWrapper.jsx';
 import PostList from '../components/PostList.jsx';
 import Loader from '../components/Loader.jsx';
 import postService from '../services/postService.js';
@@ -9,7 +9,8 @@ import windowUtils from '../services/windowUtils.js';
 const INTERVAL = 3000;
 
 function About() {
-  const { setErrorMsg, user } = useContext(PageWrapperContext);
+  const { user } = useContext(PageWrapperContext);
+  const { setErrorMsg } = useContext(NotificationContext);
 
   const [response, setResponse] = useState({
     pages: null,

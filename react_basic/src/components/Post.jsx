@@ -1,5 +1,8 @@
-import { useContext, useEffect, useRef, useState } from 'react';
-import { PageWrapperContext } from '../pages/PageWrapper.jsx';
+import { useContext, useEffect, useReducer, useRef, useState } from 'react';
+import {
+  PageWrapperContext,
+  NotificationContext,
+} from '../pages/PageWrapper.jsx';
 import { PostListContext } from './PostList.jsx';
 import Loader from '../components/Loader.jsx';
 import validationService from '../services/validationService.js';
@@ -11,14 +14,10 @@ import '../styles/Post.css';
 function Post({ post }) {
   const { shouldUpdate } = useContext(PostListContext);
 
-  const {
-    user,
-    favorites,
-    setFavorites,
-    setErrorMsg,
-    setSuccessMsg,
-    setFullscreenPopupContent,
-  } = useContext(PageWrapperContext);
+  const { user, favorites, setFavorites } = useContext(PageWrapperContext);
+
+  const { setErrorMsg, setSuccessMsg, setFullscreenPopupContent } =
+    useContext(NotificationContext);
 
   const [values, setValues] = useState({
     title: post.title,
@@ -28,12 +27,6 @@ function Post({ post }) {
   const [formValues, setFormValues] = useState({
     title: values.title,
     text: values.text,
-  });
-
-  const [statValues, setStatValues] = useState({
-    likes: post.statistics.likes,
-    dislikes: post.statistics.dislikes,
-    views: post.statistics.views,
   });
 
   const [isFav, setIsFav] = useState(favorites.includes(post.id));
@@ -51,6 +44,12 @@ function Post({ post }) {
       ?.includes(post.id),
   );
 
+  const [statValues, changeStatValues] = useReducer(statValuesReducer, {
+    likes: post.statistics.likes,
+    dislikes: post.statistics.dislikes,
+    views: post.statistics.views,
+  });
+
   const postRef = useRef();
   const postEditFormRef = useRef();
   const postTextRef = useRef();
@@ -64,7 +63,7 @@ function Post({ post }) {
       const observer = new IntersectionObserver(
         (entries) => {
           if (entries[0].isIntersecting) {
-            setStatValues((prev) => ({ ...prev, views: prev.views + 1 }));
+            changeStatValues('views');
             observer.disconnect();
           }
         },
@@ -174,6 +173,57 @@ function Post({ post }) {
 
     const input = e.target;
     setFormValues((prev) => ({ ...prev, [input.name]: input.value }));
+  }
+
+  function statValuesReducer(state, stat) {
+    let likes = state.likes;
+    let dislikes = state.dislikes;
+    let views = state.views;
+
+    switch (stat) {
+      case 'views':
+        if (shouldUpdate) {
+          views++;
+        }
+
+        break;
+      case 'likes':
+        if (user && shouldUpdate) {
+          if (isLiked) {
+            likes--;
+          } else {
+            likes++;
+          }
+
+          if (isDisliked) {
+            setIsDisliked(false);
+            dislikes--;
+          }
+
+          setIsLiked((prev) => !prev);
+        }
+
+        break;
+      case 'dislikes':
+        if (user && shouldUpdate) {
+          if (isDisliked) {
+            dislikes--;
+          } else {
+            dislikes++;
+          }
+
+          if (isLiked) {
+            setIsLiked(false);
+            likes--;
+          }
+
+          setIsDisliked((prev) => !prev);
+        }
+
+        break;
+    }
+
+    return { likes, dislikes, views };
   }
 
   async function handleFormSubmit(e) {
@@ -294,41 +344,7 @@ function Post({ post }) {
   }
 
   function handleStatChange(e) {
-    if (user && shouldUpdate) {
-      const stat = e.currentTarget.dataset.stat;
-      let likes = statValues.likes;
-      let dislikes = statValues.dislikes;
-
-      if (stat === 'likes') {
-        if (isLiked) {
-          likes--;
-        } else {
-          likes++;
-        }
-
-        if (isDisliked) {
-          setIsDisliked(false);
-          dislikes--;
-        }
-
-        setIsLiked((prev) => !prev);
-      } else if (stat === 'dislikes') {
-        if (isDisliked) {
-          dislikes--;
-        } else {
-          dislikes++;
-        }
-
-        if (isLiked) {
-          setIsLiked(false);
-          likes--;
-        }
-
-        setIsDisliked((prev) => !prev);
-      }
-
-      setStatValues((prev) => ({ ...prev, likes: likes, dislikes: dislikes }));
-    }
+    changeStatValues(e.currentTarget.dataset.stat);
   }
 
   return (

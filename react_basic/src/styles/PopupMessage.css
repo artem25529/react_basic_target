@@ -1,8 +1,7 @@
 .popup-message {
   position: fixed;
-  top: 5em;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 2000;
   width: min(90%, 800px);
   display: flex;
@@ -12,6 +11,7 @@
   padding: 0.7em 1em;
   padding-right: 0.7em;
   color: black;
+  animation: slide 0.2s both;
 
   &.error {
     background-color: rgb(255, 161, 172);
@@ -29,5 +29,15 @@
   & > .popup-close {
     cursor: pointer;
     align-self: flex-start;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translate(-50%, -2rem);
+  }
+
+  to {
+    transform: translate(-50%, 5rem);
   }
 }

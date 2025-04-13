@@ -1,16 +1,17 @@
 import { useContext, useEffect, useState } from 'react';
-import { PageWrapperContext } from './PageWrapper.jsx';
+import { PageWrapperContext, NotificationContext } from './PageWrapper.jsx';
 import PostList from '../components/PostList.jsx';
 import Loader from '../components/Loader.jsx';
 import postService from '../services/postService.js';
-import '../styles/Favorites.css';
 import windowUtils from '../services/windowUtils.js';
+import '../styles/Favorites.css';
 
 const MAX_PAGE_LINKS = 7;
 const LINKS_AROUND_CURRENT = Math.floor((MAX_PAGE_LINKS - 2) / 2);
 
 function Favorites() {
-  const { favorites, setErrorMsg } = useContext(PageWrapperContext);
+  const { favorites } = useContext(PageWrapperContext);
+  const { setErrorMsg } = useContext(NotificationContext);
 
   const [postList, setPostList] = useState([]);
   const [page, setPage] = useState(+1);

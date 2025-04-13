@@ -5,9 +5,9 @@
       "title": "1st post title!",
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae assumenda quam aliquid quod. Temporibu!!s suscipit illo facere exercitationem, fugiat alias doloremque quaerat maiores aut qui ut consequuntur eaque sed nulla!!",
       "statistics": {
-        "likes": 11,
+        "likes": 12,
         "dislikes": 2,
-        "views": 124
+        "views": 125
       }
     },
     {
@@ -26,8 +26,8 @@
       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis est nihil ut reprehenderit? Quia, officiis, illo explicabo delectus dicta dolorum quaerat numquam culpa reiciendis necessitatibus consequuntur laborum quisquam accusantium velit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       "statistics": {
         "likes": 66,
-        "dislikes": 18,
-        "views": 238
+        "dislikes": 19,
+        "views": 239
       }
     },
     {
@@ -199,16 +199,6 @@
         "likes": 102,
         "dislikes": 31
       }
-    },
-    {
-      "id": "a147",
-      "title": "new title",
-      "text": "new text",
-      "statistics": {
-        "views": 1000,
-        "likes": 123,
-        "dislikes": 76
-      }
     }
   ],
   "users": [
@@ -216,20 +206,13 @@
       "id": "1",
       "email": "test1@gmail.com",
       "password": "Test_23",
-      "favorites": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ]
+      "favorites": ["2", "3", "4"]
     },
     {
       "id": "2",
       "email": "test2@gmail.com",
       "password": "Test_12",
-      "favorites": [
-        "7"
-      ]
+      "favorites": ["7"]
     }
   ]
 }

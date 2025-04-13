@@ -1,44 +1,44 @@
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import '../styles/PopupMessage.css';
 
 function PopupMessage({
   message,
   level,
-  resetCallback,
   callback,
   milliseconds,
+  resetCallback,
 }) {
+  const popupRef = useRef();
   const timeout = useRef();
 
   useEffect(() => {
-    timeout.current = setTimeout(
-      () => {
-        closeFunc();
-      },
-      milliseconds ? milliseconds : 5000,
-    );
-  }, []);
+    popupRef.current.getAnimations().forEach((anim) => {
+      anim.cancel();
+      anim.play();
+    });
+
+    timeout.current = setTimeout(closeFunc, milliseconds ?? 5000);
+
+    return () => {
+      clearTimeout(timeout.current);
+    };
+  });
 
   function handleClose() {
-    if (timeout.current) {
-      clearTimeout(timeout.current);
-    }
-
+    clearTimeout(timeout.current);
     closeFunc();
   }
 
   function closeFunc() {
-    if (typeof resetCallback === 'function') {
-      resetCallback();
-    }
-
-    if (typeof callback === 'function') {
-      callback();
-    }
+    typeof resetCallback === 'function' && resetCallback();
+    typeof callback === 'function' && callback();
   }
 
   return (
-    <div className={'popup-message' + (level ? ` ${level}` : '')}>
+    <div
+      ref={popupRef}
+      className={'popup-message' + (level ? ` ${level}` : '')}
+    >
       <div className="popup-content">{message}</div>
       <button
         type="button"
@@ -51,4 +51,10 @@ function PopupMessage({
   );
 }
 
-export default PopupMessage;
+function arePropsEqual(oldProps, newProps) {
+  return (
+    oldProps.message === newProps.message && oldProps.level === newProps.level
+  );
+}
+
+export default memo(PopupMessage, arePropsEqual);

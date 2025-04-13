@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
 import Skeleton, { BoxSkeleton } from '../components/Skeleton.jsx';
 import BlogSkeleton from './BlogSkeleton.jsx';
+import localStorageService from '../services/localStorageService.js';
+import themeService from '../services/themeService.js';
 
 function PageWrapperSkeleton() {
   const icons = [];
@@ -7,6 +10,13 @@ function PageWrapperSkeleton() {
   for (let i = 0; i < 4; i++) {
     icons.push(<BoxSkeleton width="2.8em" height="2.8em" />);
   }
+
+  useEffect(() => {
+    const user = localStorageService.getLoggedInUser();
+    const theme = themeService.getThemeForUser(user);
+    themeService.applyTheme(user, theme);
+  }, []);
+
   return (
     <Skeleton main={true} pulser={true}>
       <div className="page-wrapper-skeleton-wrapper">

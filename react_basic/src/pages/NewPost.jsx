@@ -1,5 +1,5 @@
 import { useRef, useState, useContext, useEffect } from 'react';
-import { PageWrapperContext } from '../pages/PageWrapper.jsx';
+import { NotificationContext } from '../pages/PageWrapper.jsx';
 import Loader from '../components/Loader.jsx';
 import validationService from '../services/validationService.js';
 import postService from '../services/postService.js';
@@ -7,7 +7,7 @@ import windowUtils from '../services/windowUtils.js';
 import '../styles/NewPost.css';
 
 function NewPost() {
-  const { setErrorMsg, setSuccessMsg } = useContext(PageWrapperContext);
+  const { setErrorMsg, setSuccessMsg } = useContext(NotificationContext);
 
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
