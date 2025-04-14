@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Yellowtail&display=swap')
+layer(lib);
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_2,call,cancel,check_circle,chevron_backward,chevron_forward,close,dark_mode,delete,edit_square,error,favorite,first_page,last_page,light_mode,login,logout,mail,menu,person_add,play_arrow,search,straight,sync_alt,thumb_down,thumb_up,visibility,visibility_off,volume_off,volume_up')
+layer(lib);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+:root {
+  font-family: 'Open Sans', serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  color-scheme: light;
+  background: var(--page-background) fixed;
+  color: var(--color-text);
+
+  --color-main: rgb(159 168 218);
+  --color-text: #0e0e0e;
+  --color-logo-text: rgb(24 25 63);
+
+  --page-background: linear-gradient(rgb(228, 232, 255), white);
+  --header-background: white;
+  --post-background: rgb(244, 245, 255);
+
+  --color-border: #dcdcdc;
+  --color-loader-background: rgba(229, 229, 229, 0.6);
+
+  --color-nav-text: rgb(159 168 218);
+  --color-nav-background-hover: #f5f6ff;
+
+  --color-login-text: rgb(164, 175, 236);
+  --color-login-background-hover: #f7f8ff;
+  --color-signup-background-hover: rgb(173, 182, 237);
+
+  --color-logout-text: rgb(128, 128, 128);
+  --color-logout-background-hover: rgb(243, 243, 243);
+
+  --color-skeleton-pulser: rgba(255, 255, 255, 0.7);
+}
+
+:root.dark {
+  color-scheme: dark;
+
+  .logo-img {
+    filter: drop-shadow(0 0 7px);
+  }
+
+  --page-background: rgb(50, 50, 50);
+  --header-background: rgb(82, 82, 82);
+  --post-background: rgb(80, 80, 80);
+
+  --color-text: #fdfdfd;
+  --color-logo-text: rgb(255, 255, 255);
+
+  --color-nav-text: rgb(219, 225, 255);
+  --color-nav-background-hover: rgb(105, 108, 126);
+
+  --color-border: #8f8f8f;
+  --color-loader-background: rgba(187, 187, 187, 0.6);
+
+  --color-login-text: rgb(214, 219, 255);
+  --color-login-background-hover: rgb(103, 107, 132);
+  --color-signup-background-hover: rgb(187, 193, 236);
+
+  --color-logout-text: rgb(215, 215, 215);
+  --color-logout-background-hover: rgb(129, 129, 129);
+
+  --color-skeleton-pulser: rgba(255, 255, 255, 0.3);
+}
+
+input,
+textarea,
+button {
+  border-style: none;
+  background-color: unset;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea,
+input {
+  padding: 0.2rem 0.4rem;
+  border: 1px solid var(--color-border);
+}
+
+:is(input, textarea):focus {
+  outline: 2px dotted var(--color-nav-text);
+  outline-offset: -3px;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.err {
+  color: crimson;
+}
+
+.disabled,
+:disabled {
+  pointer-events: none;
+  opacity: 0.56;
+}
+
+.opaque {
+  opacity: 0.56;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'wght' 700, 'FILL' 1;
+  font-size: 1.3em;
+  line-height: 1;
+  font-weight: normal;
+  user-select: none;
+  color: currentColor;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1080px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    font-size: 10px;
+  }
+}

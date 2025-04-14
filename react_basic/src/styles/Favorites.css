@@ -1,0 +1,65 @@
+.favorites-page {
+  position: relative;
+  flex-grow: 1;
+  padding-inline: 5em;
+
+  @media (max-width: 1250px) {
+    position: static;
+  }
+
+  @media (max-width: 750px) {
+    padding-inline: 1em;
+  }
+
+  & > .favorites-title {
+    text-align: center;
+    font-size: 1.4em;
+    margin-block: 0.6em;
+    font-weight: 500;
+  }
+
+  & > .favorites-pagination {
+    font-size: 1.05em;
+    margin-block: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    justify-content: center;
+
+    & > .page-num {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.25lh;
+      height: 1.25lh;
+      text-align: center;
+      font-weight: 650;
+      cursor: pointer;
+      border: 1.4px solid var(--color-border);
+
+      &:first-child {
+        border-top-left-radius: 0.6em;
+        border-bottom-left-radius: 0.6em;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0.6em;
+        border-bottom-right-radius: 0.6em;
+      }
+
+      .material-symbols-outlined {
+        font-size: 1.1em;
+      }
+
+      &.arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.active {
+        background-color: var(--color-main);
+      }
+    }
+  }
+}

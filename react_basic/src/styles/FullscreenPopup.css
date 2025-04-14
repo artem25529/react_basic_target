@@ -1,0 +1,14 @@
+.fullscreen-popup {
+  z-index: 1000;
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-loader-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > .fullscreen-popup-content {
+    background-color: var(--header-background);
+    padding: 2em;
+  }
+}

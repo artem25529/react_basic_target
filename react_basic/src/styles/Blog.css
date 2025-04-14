@@ -1,0 +1,34 @@
+.blog-page {
+  position: relative;
+  flex-grow: 1;
+  padding-inline: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+  padding-top: 1.25em;
+
+  @media (max-width: 1250px) {
+    position: static;
+  }
+
+  @media (max-width: 600px) {
+    padding-inline: 3.5em;
+  }
+
+  & > .add-new-post-wrapper {
+    display: flex;
+    justify-content: end;
+
+    a {
+      font-size: 1.2em;
+      font-weight: 500;
+      padding: 0.2em 0.8em;
+      border: 1px solid var(--color-nav-text);
+      border-radius: 0.3em;
+
+      &:hover {
+        background-color: var(--post-background);
+      }
+    }
+  }
+}

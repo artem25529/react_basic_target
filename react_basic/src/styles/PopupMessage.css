@@ -1,0 +1,43 @@
+.popup-message {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 2000;
+  width: min(90%, 800px);
+  display: flex;
+  gap: 1em;
+  font-size: 1.2rem;
+  border-radius: 0.4em;
+  padding: 0.7em 1em;
+  padding-right: 0.7em;
+  color: black;
+  animation: slide 0.2s both;
+
+  &.error {
+    background-color: rgb(255, 161, 172);
+  }
+
+  &.success {
+    background-color: rgb(171, 255, 155);
+  }
+
+  & > .popup-content {
+    word-wrap: break-word;
+    flex-grow: 1;
+  }
+
+  & > .popup-close {
+    cursor: pointer;
+    align-self: flex-start;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translate(-50%, -2rem);
+  }
+
+  to {
+    transform: translate(-50%, 5rem);
+  }
+}

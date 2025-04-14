@@ -1,0 +1,269 @@
+.page-header {
+  background: var(--header-background);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  font-weight: 550;
+  font-size: 1.6em;
+  padding-inline: 2.5em;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  white-space: nowrap;
+  box-shadow: 0 0 0.2em;
+
+  .nav-btn {
+    border-radius: 0.3em;
+    padding: 0.2em 0.6em;
+    cursor: pointer;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'wght' 300, 'FILL' 1;
+  }
+
+  & > .logo-container {
+    padding-inline: 0.4em;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    gap: 0.12em;
+
+    & > .logo-img {
+      height: 2.1em;
+      aspect-ratio: 1;
+    }
+
+    & > .logo-legend {
+      font-family: 'Yellowtail', serif;
+      font-size: 3rem;
+      color: var(--color-logo-text);
+    }
+  }
+
+  & > .navigation {
+    & > .nav-menu {
+      display: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      padding: 0.15em;
+      border-radius: 0.4em;
+      background-color: var(--header-background);
+    }
+
+    & > ul {
+      display: flex;
+
+      & > li {
+        & > a {
+          display: block;
+          color: var(--color-nav-text);
+
+          &:hover {
+            background-color: var(--color-nav-background-hover);
+          }
+
+          &.active {
+            text-decoration: underline 0.13em;
+            text-underline-offset: 20px;
+
+            @media (max-width: 1440px) {
+              text-underline-offset: 17px;
+            }
+
+            @media (max-width: 1080px) {
+              text-underline-offset: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & > .right-content-wrapper {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    @media (max-width: 1250px) {
+      gap: 1em;
+    }
+
+    & > .theme-switcher {
+      & > .theme {
+        padding: 0.1em 0.2em;
+        border-radius: 0.25em;
+        color: var(--header-background);
+        background-color: var(--color-text);
+        display: flex;
+        align-items: center;
+        gap: 0.22em;
+
+        & > .theme-label {
+          @media (max-width: 1250px) {
+            display: none;
+          }
+        }
+
+        & > .theme-icon {
+          font-size: 1.1em;
+        }
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    & > .user-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+
+      & > .username {
+        color: var(--color-logo-text);
+
+        @media (max-width: 650px) {
+          display: none;
+        }
+      }
+
+      & > .logout {
+        background-color: var(--color-logout-background);
+        color: var(--color-logout-text);
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+
+        & > .logout-icon {
+          display: none;
+        }
+
+        @media (max-width: 1250px) {
+          & > .logout-label {
+            display: none;
+          }
+
+          & > .logout-icon {
+            display: block;
+          }
+        }
+
+        &:hover {
+          background-color: var(--color-logout-background-hover);
+        }
+      }
+    }
+
+    & > .login-wrapper {
+      display: flex;
+      gap: 0.5em;
+
+      & > a {
+        border: 1px solid var(--color-login-text);
+
+        &.login {
+          color: var(--color-login-text);
+          display: flex;
+          align-items: center;
+
+          & > .login-icon {
+            display: none;
+          }
+
+          @media (max-width: 1250px) {
+            & > .login-label {
+              display: none;
+            }
+
+            & > .login-icon {
+              display: block;
+            }
+          }
+
+          &:hover {
+            background-color: var(--color-login-background-hover);
+          }
+        }
+
+        &.signup {
+          color: var(--header-background);
+          background-color: var(--color-login-text);
+          display: flex;
+          align-items: center;
+
+          & > .signup-icon {
+            display: none;
+          }
+
+          @media (max-width: 1250px) {
+            & > .signup-label {
+              display: none;
+            }
+
+            & > .signup-icon {
+              display: block;
+            }
+          }
+
+          &:hover {
+            background-color: var(--color-signup-background-hover);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .page-header {
+    padding-inline: 1em;
+    justify-content: space-between;
+    gap: 0;
+
+    & > .logo-container {
+      order: 1;
+    }
+
+    & > .navigation {
+      order: 0;
+      & > .nav-menu {
+        display: block;
+      }
+
+      & > ul {
+        display: none;
+        background-color: var(--color-loader-background);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        backdrop-filter: blur(8px);
+
+        & > li {
+          & > a {
+            padding-block: 0.56em;
+            border-radius: 0;
+            box-shadow: inset 0 -1px 8px var(--color-text);
+
+            &.active {
+              text-decoration: none;
+              font-weight: 660;
+              text-shadow: 0 0px 2px var(--color-text);
+            }
+          }
+        }
+      }
+    }
+
+    & > .right-content-wrapper {
+      order: 2;
+      margin: 0;
+    }
+  }
+}
