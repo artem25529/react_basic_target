@@ -4,8 +4,7 @@
 
 1. Install [node.js](https://nodejs.org/en/download) if you don't have it yet.
 2. Clone this project.
-3. Change active directory to 'react_basic'.
-4. Run next cmd commands in the current directory:
+3. Run next cmd commands in the root directory:
    - npm i -g json-server@0.17.4
    - npm i
    - npm run build

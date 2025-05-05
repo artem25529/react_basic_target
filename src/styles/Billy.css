@@ -26,6 +26,7 @@
 
       &.img {
         width: 75%;
+        box-shadow: 0 0 5em rgb(138, 202, 245), 0 0 3em rgb(177, 215, 240);
       }
     }
 
